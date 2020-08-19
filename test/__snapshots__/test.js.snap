@@ -2,735 +2,496 @@
 
 exports[`HTML to React components should generate ES5 React components 1`] = `
 Object {
-  "Field": "import React from \\"react\\";
-import Label from \\"./Label\\";
-import Input from \\"./Input\\";
-const Field = React.createClass({
-  render() {
-    return (
-      <div className=\\"field\\">
-        <Label />
-        <Input />
-      </div>
-    );
-  }
-});
-export default Field;
+  "Component1": "import tw from \\"twin.macro\\";
+const Label = tw.div\`block text-sm leading-5 font-medium text-gray-700\`;
+
+const Component1 = () => <Label htmlFor=\\"price\\">Price</Label>;
+
+export default Component1;
 ",
-  "Form": "import React from \\"react\\";
-import Field from \\"./Field\\";
-const Form = React.createClass({
-  render() {
-    return (
-      <form action>
-        <Field />
-      </form>
-    );
-  }
-});
-export default Form;
+  "Component2": "import tw from \\"twin.macro\\";
+const Div = tw.div\`mt-1 relative rounded-md shadow-sm\`;
+
+import Component3 from \\"./Component3\\";
+import Component5 from \\"./Component5\\";
+import Component6 from \\"./Component6\\";
+
+const Component2 = () => (
+  <Div>
+    <Component3></Component3>
+    <Component5 />
+    <Component6></Component6>
+  </Div>
+);
+
+export default Component2;
 ",
-  "Header": "import React from \\"react\\";
-import Heading from \\"./Heading\\";
-import Nav from \\"./Nav\\";
-const Header = React.createClass({
-  render() {
-    return (
-      <header className=\\"header\\">
-        <Heading />
-        <Nav />
-      </header>
-    );
-  }
-});
-export default Header;
+  "Component3": "import tw from \\"twin.macro\\";
+const Div = tw.div\`absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none\`;
+
+import Component4 from \\"./Component4\\";
+
+const Component3 = () => (
+  <Div>
+    <Component4></Component4>
+  </Div>
+);
+
+export default Component3;
 ",
-  "Heading": "import React from \\"react\\";
-const Heading = React.createClass({
-  render() {
-    return <h1 className=\\"heading\\">Hello, world!</h1>;
-  }
-});
-export default Heading;
+  "Component4": "import tw from \\"twin.macro\\";
+const Span = tw.div\`text-gray-500 sm:text-sm sm:leading-5\`;
+
+const Component4 = () => <Span>$</Span>;
+
+export default Component4;
 ",
-  "Input": "import React from \\"react\\";
-const Input = React.createClass({
-  render() {
-    return <input type=\\"text\\" id=\\"input\\" />;
-  }
-});
-export default Input;
+  "Component5": "import tw from \\"twin.macro\\";
+const Input = tw.div\`form-input block w-full pl-7 pr-12 sm:text-sm sm:leading-5\`;
+
+const Component5 = () => <Input id=\\"price\\" placeholder={0.0} />;
+
+export default Component5;
 ",
-  "Label": "import React from \\"react\\";
-const Label = React.createClass({
-  render() {
-    return (
-      <label htmlFor=\\"input\\">
-        Input<span>label</span>
-      </label>
-    );
-  }
-});
-export default Label;
+  "Component6": "import tw from \\"twin.macro\\";
+const Div = tw.div\`absolute inset-y-0 right-0 flex items-center\`;
+
+import Component7 from \\"./Component7\\";
+
+const Component6 = () => (
+  <Div>
+    <Component7></Component7>
+  </Div>
+);
+
+export default Component6;
 ",
-  "ListItem": "import React from \\"react\\";
-const ListItem = React.createClass({
-  render() {
-    return <li className=\\"list-item\\" />;
-  }
-});
-export default ListItem;
-",
-  "Main": "import React from \\"react\\";
-import Form from \\"./Form\\";
-const Main = React.createClass({
-  render() {
-    return (
-      <main className=\\"main\\">
-        <Form />
-      </main>
-    );
-  }
-});
-export default Main;
-",
-  "Nav": "import React from \\"react\\";
-import ListItem from \\"./ListItem\\";
-const Nav = React.createClass({
-  render() {
-    return (
-      <nav className=\\"nav\\">
-        <ul className=\\"list\\">
-          <ListItem />
-          <ListItem />
-        </ul>
-      </nav>
-    );
-  }
-});
-export default Nav;
+  "Component7": "import tw from \\"twin.macro\\";
+const Select = tw.div\`form-select h-full py-0 pl-2 pr-7 border-transparent bg-transparent text-gray-500 sm:text-sm sm:leading-5\`;
+
+const Component7 = () => (
+  <Select aria-label=\\"Currency\\">
+    <option>USD</option>
+    <option>CAD</option>
+    <option>EUR</option>
+  </Select>
+);
+
+export default Component7;
 ",
 }
 `;
 
 exports[`HTML to React components should generate ES5 React components as CommonJS modules 1`] = `
 Object {
-  "Field": "const React = require(\\"react\\");
+  "Component1": "import tw from \\"twin.macro\\";
+const Label = tw.div\`block text-sm leading-5 font-medium text-gray-700\`;
 
-const Label = require(\\"./Label\\");
+const Component1 = () => <Label htmlFor=\\"price\\">Price</Label>;
 
-const Input = require(\\"./Input\\");
-
-const Field = React.createClass({
-  render() {
-    return (
-      <div className=\\"field\\">
-        <Label />
-        <Input />
-      </div>
-    );
-  }
-});
-module.exports = Field;
+export default Component1;
 ",
-  "Form": "const React = require(\\"react\\");
+  "Component2": "import tw from \\"twin.macro\\";
+const Div = tw.div\`mt-1 relative rounded-md shadow-sm\`;
 
-const Field = require(\\"./Field\\");
+import Component3 from \\"./Component3\\";
+import Component5 from \\"./Component5\\";
+import Component6 from \\"./Component6\\";
 
-const Form = React.createClass({
-  render() {
-    return (
-      <form action>
-        <Field />
-      </form>
-    );
-  }
-});
-module.exports = Form;
+const Component2 = () => (
+  <Div>
+    <Component3></Component3>
+    <Component5 />
+    <Component6></Component6>
+  </Div>
+);
+
+export default Component2;
 ",
-  "Header": "const React = require(\\"react\\");
+  "Component3": "import tw from \\"twin.macro\\";
+const Div = tw.div\`absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none\`;
 
-const Heading = require(\\"./Heading\\");
+import Component4 from \\"./Component4\\";
 
-const Nav = require(\\"./Nav\\");
+const Component3 = () => (
+  <Div>
+    <Component4></Component4>
+  </Div>
+);
 
-const Header = React.createClass({
-  render() {
-    return (
-      <header className=\\"header\\">
-        <Heading />
-        <Nav />
-      </header>
-    );
-  }
-});
-module.exports = Header;
+export default Component3;
 ",
-  "Heading": "const React = require(\\"react\\");
+  "Component4": "import tw from \\"twin.macro\\";
+const Span = tw.div\`text-gray-500 sm:text-sm sm:leading-5\`;
 
-const Heading = React.createClass({
-  render() {
-    return <h1 className=\\"heading\\">Hello, world!</h1>;
-  }
-});
-module.exports = Heading;
+const Component4 = () => <Span>$</Span>;
+
+export default Component4;
 ",
-  "Input": "const React = require(\\"react\\");
+  "Component5": "import tw from \\"twin.macro\\";
+const Input = tw.div\`form-input block w-full pl-7 pr-12 sm:text-sm sm:leading-5\`;
 
-const Input = React.createClass({
-  render() {
-    return <input type=\\"text\\" id=\\"input\\" />;
-  }
-});
-module.exports = Input;
+const Component5 = () => <Input id=\\"price\\" placeholder={0.0} />;
+
+export default Component5;
 ",
-  "Label": "const React = require(\\"react\\");
+  "Component6": "import tw from \\"twin.macro\\";
+const Div = tw.div\`absolute inset-y-0 right-0 flex items-center\`;
 
-const Label = React.createClass({
-  render() {
-    return (
-      <label htmlFor=\\"input\\">
-        Input<span>label</span>
-      </label>
-    );
-  }
-});
-module.exports = Label;
+import Component7 from \\"./Component7\\";
+
+const Component6 = () => (
+  <Div>
+    <Component7></Component7>
+  </Div>
+);
+
+export default Component6;
 ",
-  "ListItem": "const React = require(\\"react\\");
+  "Component7": "import tw from \\"twin.macro\\";
+const Select = tw.div\`form-select h-full py-0 pl-2 pr-7 border-transparent bg-transparent text-gray-500 sm:text-sm sm:leading-5\`;
 
-const ListItem = React.createClass({
-  render() {
-    return <li className=\\"list-item\\" />;
-  }
-});
-module.exports = ListItem;
-",
-  "Main": "const React = require(\\"react\\");
+const Component7 = () => (
+  <Select aria-label=\\"Currency\\">
+    <option>USD</option>
+    <option>CAD</option>
+    <option>EUR</option>
+  </Select>
+);
 
-const Form = require(\\"./Form\\");
-
-const Main = React.createClass({
-  render() {
-    return (
-      <main className=\\"main\\">
-        <Form />
-      </main>
-    );
-  }
-});
-module.exports = Main;
-",
-  "Nav": "const React = require(\\"react\\");
-
-const ListItem = require(\\"./ListItem\\");
-
-const Nav = React.createClass({
-  render() {
-    return (
-      <nav className=\\"nav\\">
-        <ul className=\\"list\\">
-          <ListItem />
-          <ListItem />
-        </ul>
-      </nav>
-    );
-  }
-});
-module.exports = Nav;
+export default Component7;
 ",
 }
 `;
 
 exports[`HTML to React components should generate ES5 React components as ES6 modules 1`] = `
 Object {
-  "Field": "import React from \\"react\\";
-import Label from \\"./Label\\";
-import Input from \\"./Input\\";
-const Field = React.createClass({
-  render() {
-    return (
-      <div className=\\"field\\">
-        <Label />
-        <Input />
-      </div>
-    );
-  }
-});
-export default Field;
+  "Component1": "import tw from \\"twin.macro\\";
+const Label = tw.div\`block text-sm leading-5 font-medium text-gray-700\`;
+
+const Component1 = () => <Label htmlFor=\\"price\\">Price</Label>;
+
+export default Component1;
 ",
-  "Form": "import React from \\"react\\";
-import Field from \\"./Field\\";
-const Form = React.createClass({
-  render() {
-    return (
-      <form action>
-        <Field />
-      </form>
-    );
-  }
-});
-export default Form;
+  "Component2": "import tw from \\"twin.macro\\";
+const Div = tw.div\`mt-1 relative rounded-md shadow-sm\`;
+
+import Component3 from \\"./Component3\\";
+import Component5 from \\"./Component5\\";
+import Component6 from \\"./Component6\\";
+
+const Component2 = () => (
+  <Div>
+    <Component3></Component3>
+    <Component5 />
+    <Component6></Component6>
+  </Div>
+);
+
+export default Component2;
 ",
-  "Header": "import React from \\"react\\";
-import Heading from \\"./Heading\\";
-import Nav from \\"./Nav\\";
-const Header = React.createClass({
-  render() {
-    return (
-      <header className=\\"header\\">
-        <Heading />
-        <Nav />
-      </header>
-    );
-  }
-});
-export default Header;
+  "Component3": "import tw from \\"twin.macro\\";
+const Div = tw.div\`absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none\`;
+
+import Component4 from \\"./Component4\\";
+
+const Component3 = () => (
+  <Div>
+    <Component4></Component4>
+  </Div>
+);
+
+export default Component3;
 ",
-  "Heading": "import React from \\"react\\";
-const Heading = React.createClass({
-  render() {
-    return <h1 className=\\"heading\\">Hello, world!</h1>;
-  }
-});
-export default Heading;
+  "Component4": "import tw from \\"twin.macro\\";
+const Span = tw.div\`text-gray-500 sm:text-sm sm:leading-5\`;
+
+const Component4 = () => <Span>$</Span>;
+
+export default Component4;
 ",
-  "Input": "import React from \\"react\\";
-const Input = React.createClass({
-  render() {
-    return <input type=\\"text\\" id=\\"input\\" />;
-  }
-});
-export default Input;
+  "Component5": "import tw from \\"twin.macro\\";
+const Input = tw.div\`form-input block w-full pl-7 pr-12 sm:text-sm sm:leading-5\`;
+
+const Component5 = () => <Input id=\\"price\\" placeholder={0.0} />;
+
+export default Component5;
 ",
-  "Label": "import React from \\"react\\";
-const Label = React.createClass({
-  render() {
-    return (
-      <label htmlFor=\\"input\\">
-        Input<span>label</span>
-      </label>
-    );
-  }
-});
-export default Label;
+  "Component6": "import tw from \\"twin.macro\\";
+const Div = tw.div\`absolute inset-y-0 right-0 flex items-center\`;
+
+import Component7 from \\"./Component7\\";
+
+const Component6 = () => (
+  <Div>
+    <Component7></Component7>
+  </Div>
+);
+
+export default Component6;
 ",
-  "ListItem": "import React from \\"react\\";
-const ListItem = React.createClass({
-  render() {
-    return <li className=\\"list-item\\" />;
-  }
-});
-export default ListItem;
-",
-  "Main": "import React from \\"react\\";
-import Form from \\"./Form\\";
-const Main = React.createClass({
-  render() {
-    return (
-      <main className=\\"main\\">
-        <Form />
-      </main>
-    );
-  }
-});
-export default Main;
-",
-  "Nav": "import React from \\"react\\";
-import ListItem from \\"./ListItem\\";
-const Nav = React.createClass({
-  render() {
-    return (
-      <nav className=\\"nav\\">
-        <ul className=\\"list\\">
-          <ListItem />
-          <ListItem />
-        </ul>
-      </nav>
-    );
-  }
-});
-export default Nav;
+  "Component7": "import tw from \\"twin.macro\\";
+const Select = tw.div\`form-select h-full py-0 pl-2 pr-7 border-transparent bg-transparent text-gray-500 sm:text-sm sm:leading-5\`;
+
+const Component7 = () => (
+  <Select aria-label=\\"Currency\\">
+    <option>USD</option>
+    <option>CAD</option>
+    <option>EUR</option>
+  </Select>
+);
+
+export default Component7;
 ",
 }
 `;
 
 exports[`HTML to React components should generate ES6 React components 1`] = `
 Object {
-  "Field": "import React from \\"react\\";
-import Label from \\"./Label\\";
-import Input from \\"./Input\\";
+  "Component1": "import tw from \\"twin.macro\\";
+const Label = tw.div\`block text-sm leading-5 font-medium text-gray-700\`;
 
-class Field extends React.Component {
-  render() {
-    return (
-      <div className=\\"field\\">
-        <Label />
-        <Input />
-      </div>
-    );
-  }
-}
+const Component1 = () => <Label htmlFor=\\"price\\">Price</Label>;
 
-export default Field;
+export default Component1;
 ",
-  "Form": "import React from \\"react\\";
-import Field from \\"./Field\\";
+  "Component2": "import tw from \\"twin.macro\\";
+const Div = tw.div\`mt-1 relative rounded-md shadow-sm\`;
 
-class Form extends React.Component {
-  render() {
-    return (
-      <form action>
-        <Field />
-      </form>
-    );
-  }
-}
+import Component3 from \\"./Component3\\";
+import Component5 from \\"./Component5\\";
+import Component6 from \\"./Component6\\";
 
-export default Form;
+const Component2 = () => (
+  <Div>
+    <Component3></Component3>
+    <Component5 />
+    <Component6></Component6>
+  </Div>
+);
+
+export default Component2;
 ",
-  "Header": "import React from \\"react\\";
-import Heading from \\"./Heading\\";
-import Nav from \\"./Nav\\";
+  "Component3": "import tw from \\"twin.macro\\";
+const Div = tw.div\`absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none\`;
 
-class Header extends React.Component {
-  render() {
-    return (
-      <header className=\\"header\\">
-        <Heading />
-        <Nav />
-      </header>
-    );
-  }
-}
+import Component4 from \\"./Component4\\";
 
-export default Header;
+const Component3 = () => (
+  <Div>
+    <Component4></Component4>
+  </Div>
+);
+
+export default Component3;
 ",
-  "Heading": "import React from \\"react\\";
+  "Component4": "import tw from \\"twin.macro\\";
+const Span = tw.div\`text-gray-500 sm:text-sm sm:leading-5\`;
 
-class Heading extends React.Component {
-  render() {
-    return <h1 className=\\"heading\\">Hello, world!</h1>;
-  }
-}
+const Component4 = () => <Span>$</Span>;
 
-export default Heading;
+export default Component4;
 ",
-  "Input": "import React from \\"react\\";
+  "Component5": "import tw from \\"twin.macro\\";
+const Input = tw.div\`form-input block w-full pl-7 pr-12 sm:text-sm sm:leading-5\`;
 
-class Input extends React.Component {
-  render() {
-    return <input type=\\"text\\" id=\\"input\\" />;
-  }
-}
+const Component5 = () => <Input id=\\"price\\" placeholder={0.0} />;
 
-export default Input;
+export default Component5;
 ",
-  "Label": "import React from \\"react\\";
+  "Component6": "import tw from \\"twin.macro\\";
+const Div = tw.div\`absolute inset-y-0 right-0 flex items-center\`;
 
-class Label extends React.Component {
-  render() {
-    return (
-      <label htmlFor=\\"input\\">
-        Input<span>label</span>
-      </label>
-    );
-  }
-}
+import Component7 from \\"./Component7\\";
 
-export default Label;
+const Component6 = () => (
+  <Div>
+    <Component7></Component7>
+  </Div>
+);
+
+export default Component6;
 ",
-  "ListItem": "import React from \\"react\\";
+  "Component7": "import tw from \\"twin.macro\\";
+const Select = tw.div\`form-select h-full py-0 pl-2 pr-7 border-transparent bg-transparent text-gray-500 sm:text-sm sm:leading-5\`;
 
-class ListItem extends React.Component {
-  render() {
-    return <li className=\\"list-item\\" />;
-  }
-}
+const Component7 = () => (
+  <Select aria-label=\\"Currency\\">
+    <option>USD</option>
+    <option>CAD</option>
+    <option>EUR</option>
+  </Select>
+);
 
-export default ListItem;
-",
-  "Main": "import React from \\"react\\";
-import Form from \\"./Form\\";
-
-class Main extends React.Component {
-  render() {
-    return (
-      <main className=\\"main\\">
-        <Form />
-      </main>
-    );
-  }
-}
-
-export default Main;
-",
-  "Nav": "import React from \\"react\\";
-import ListItem from \\"./ListItem\\";
-
-class Nav extends React.Component {
-  render() {
-    return (
-      <nav className=\\"nav\\">
-        <ul className=\\"list\\">
-          <ListItem />
-          <ListItem />
-        </ul>
-      </nav>
-    );
-  }
-}
-
-export default Nav;
+export default Component7;
 ",
 }
 `;
 
 exports[`HTML to React components should generate file names in lowercase with the specified delimiter 1`] = `
 Object {
-  "Field": "import React from \\"react\\";
-import Label from \\"./label\\";
-import Input from \\"./input\\";
-const Field = React.createClass({
-  render() {
-    return (
-      <div className=\\"field\\">
-        <Label />
-        <Input />
-      </div>
-    );
-  }
-});
-export default Field;
+  "Component1": "import tw from \\"twin.macro\\";
+const Label = tw.div\`block text-sm leading-5 font-medium text-gray-700\`;
+
+const Component1 = () => <Label htmlFor=\\"price\\">Price</Label>;
+
+export default Component1;
 ",
-  "Form": "import React from \\"react\\";
-import Field from \\"./field\\";
-const Form = React.createClass({
-  render() {
-    return (
-      <form action>
-        <Field />
-      </form>
-    );
-  }
-});
-export default Form;
+  "Component2": "import tw from \\"twin.macro\\";
+const Div = tw.div\`mt-1 relative rounded-md shadow-sm\`;
+
+import Component3 from \\"./component3\\";
+import Component5 from \\"./component5\\";
+import Component6 from \\"./component6\\";
+
+const Component2 = () => (
+  <Div>
+    <Component3></Component3>
+    <Component5 />
+    <Component6></Component6>
+  </Div>
+);
+
+export default Component2;
 ",
-  "Header": "import React from \\"react\\";
-import Heading from \\"./heading\\";
-import Nav from \\"./nav\\";
-const Header = React.createClass({
-  render() {
-    return (
-      <header className=\\"header\\">
-        <Heading />
-        <Nav />
-      </header>
-    );
-  }
-});
-export default Header;
+  "Component3": "import tw from \\"twin.macro\\";
+const Div = tw.div\`absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none\`;
+
+import Component4 from \\"./component4\\";
+
+const Component3 = () => (
+  <Div>
+    <Component4></Component4>
+  </Div>
+);
+
+export default Component3;
 ",
-  "Heading": "import React from \\"react\\";
-const Heading = React.createClass({
-  render() {
-    return <h1 className=\\"heading\\">Hello, world!</h1>;
-  }
-});
-export default Heading;
+  "Component4": "import tw from \\"twin.macro\\";
+const Span = tw.div\`text-gray-500 sm:text-sm sm:leading-5\`;
+
+const Component4 = () => <Span>$</Span>;
+
+export default Component4;
 ",
-  "Input": "import React from \\"react\\";
-const Input = React.createClass({
-  render() {
-    return <input type=\\"text\\" id=\\"input\\" />;
-  }
-});
-export default Input;
+  "Component5": "import tw from \\"twin.macro\\";
+const Input = tw.div\`form-input block w-full pl-7 pr-12 sm:text-sm sm:leading-5\`;
+
+const Component5 = () => <Input id=\\"price\\" placeholder={0.0} />;
+
+export default Component5;
 ",
-  "Label": "import React from \\"react\\";
-const Label = React.createClass({
-  render() {
-    return (
-      <label htmlFor=\\"input\\">
-        Input<span>label</span>
-      </label>
-    );
-  }
-});
-export default Label;
+  "Component6": "import tw from \\"twin.macro\\";
+const Div = tw.div\`absolute inset-y-0 right-0 flex items-center\`;
+
+import Component7 from \\"./component7\\";
+
+const Component6 = () => (
+  <Div>
+    <Component7></Component7>
+  </Div>
+);
+
+export default Component6;
 ",
-  "ListItem": "import React from \\"react\\";
-const ListItem = React.createClass({
-  render() {
-    return <li className=\\"list-item\\" />;
-  }
-});
-export default ListItem;
-",
-  "Main": "import React from \\"react\\";
-import Form from \\"./form\\";
-const Main = React.createClass({
-  render() {
-    return (
-      <main className=\\"main\\">
-        <Form />
-      </main>
-    );
-  }
-});
-export default Main;
-",
-  "Nav": "import React from \\"react\\";
-import ListItem from \\"./list-item\\";
-const Nav = React.createClass({
-  render() {
-    return (
-      <nav className=\\"nav\\">
-        <ul className=\\"list\\">
-          <ListItem />
-          <ListItem />
-        </ul>
-      </nav>
-    );
-  }
-});
-export default Nav;
+  "Component7": "import tw from \\"twin.macro\\";
+const Select = tw.div\`form-select h-full py-0 pl-2 pr-7 border-transparent bg-transparent text-gray-500 sm:text-sm sm:leading-5\`;
+
+const Component7 = () => (
+  <Select aria-label=\\"Currency\\">
+    <option>USD</option>
+    <option>CAD</option>
+    <option>EUR</option>
+  </Select>
+);
+
+export default Component7;
 ",
 }
 `;
 
 exports[`HTML to React components should generate stateless React components 1`] = `
 Object {
-  "Field": "import React from \\"react\\";
-import Label from \\"./Label\\";
-import Input from \\"./Input\\";
+  "Component1": "import tw from \\"twin.macro\\";
+const Label = tw.div\`block text-sm leading-5 font-medium text-gray-700\`;
 
-const Field = () => (
-  <div className=\\"field\\">
-    <Label />
-    <Input />
-  </div>
+const Component1 = () => <Label htmlFor=\\"price\\">Price</Label>;
+
+export default Component1;
+",
+  "Component2": "import tw from \\"twin.macro\\";
+const Div = tw.div\`mt-1 relative rounded-md shadow-sm\`;
+
+import Component3 from \\"./Component3\\";
+import Component5 from \\"./Component5\\";
+import Component6 from \\"./Component6\\";
+
+const Component2 = () => (
+  <Div>
+    <Component3></Component3>
+    <Component5 />
+    <Component6></Component6>
+  </Div>
 );
 
-export default Field;
+export default Component2;
 ",
-  "Form": "import React from \\"react\\";
-import Field from \\"./Field\\";
+  "Component3": "import tw from \\"twin.macro\\";
+const Div = tw.div\`absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none\`;
 
-const Form = () => (
-  <form action>
-    <Field />
-  </form>
+import Component4 from \\"./Component4\\";
+
+const Component3 = () => (
+  <Div>
+    <Component4></Component4>
+  </Div>
 );
 
-export default Form;
+export default Component3;
 ",
-  "Header": "import React from \\"react\\";
-import Heading from \\"./Heading\\";
-import Nav from \\"./Nav\\";
+  "Component4": "import tw from \\"twin.macro\\";
+const Span = tw.div\`text-gray-500 sm:text-sm sm:leading-5\`;
 
-const Header = () => (
-  <header className=\\"header\\">
-    <Heading />
-    <Nav />
-  </header>
+const Component4 = () => <Span>$</Span>;
+
+export default Component4;
+",
+  "Component5": "import tw from \\"twin.macro\\";
+const Input = tw.div\`form-input block w-full pl-7 pr-12 sm:text-sm sm:leading-5\`;
+
+const Component5 = () => <Input id=\\"price\\" placeholder={0.0} />;
+
+export default Component5;
+",
+  "Component6": "import tw from \\"twin.macro\\";
+const Div = tw.div\`absolute inset-y-0 right-0 flex items-center\`;
+
+import Component7 from \\"./Component7\\";
+
+const Component6 = () => (
+  <Div>
+    <Component7></Component7>
+  </Div>
 );
 
-export default Header;
+export default Component6;
 ",
-  "Heading": "import React from \\"react\\";
+  "Component7": "import tw from \\"twin.macro\\";
+const Select = tw.div\`form-select h-full py-0 pl-2 pr-7 border-transparent bg-transparent text-gray-500 sm:text-sm sm:leading-5\`;
 
-const Heading = () => <h1 className=\\"heading\\">Hello, world!</h1>;
-
-export default Heading;
-",
-  "Input": "import React from \\"react\\";
-
-const Input = () => <input type=\\"text\\" id=\\"input\\" />;
-
-export default Input;
-",
-  "Label": "import React from \\"react\\";
-
-const Label = () => (
-  <label htmlFor=\\"input\\">
-    Input<span>label</span>
-  </label>
+const Component7 = () => (
+  <Select aria-label=\\"Currency\\">
+    <option>USD</option>
+    <option>CAD</option>
+    <option>EUR</option>
+  </Select>
 );
 
-export default Label;
-",
-  "ListItem": "import React from \\"react\\";
-
-const ListItem = () => <li className=\\"list-item\\" />;
-
-export default ListItem;
-",
-  "Main": "import React from \\"react\\";
-import Form from \\"./Form\\";
-
-const Main = () => (
-  <main className=\\"main\\">
-    <Form />
-  </main>
-);
-
-export default Main;
-",
-  "Nav": "import React from \\"react\\";
-import ListItem from \\"./ListItem\\";
-
-const Nav = () => (
-  <nav className=\\"nav\\">
-    <ul className=\\"list\\">
-      <ListItem />
-      <ListItem />
-    </ul>
-  </nav>
-);
-
-export default Nav;
+export default Component7;
 ",
 }
 `;
 
-exports[`HTML to React components should transform inline CSS properly 1`] = `
-Object {
-  "Box": "import React from \\"react\\";
+exports[`HTML to React components should transform inline CSS properly 1`] = `Object {}`;
 
-class Box extends React.Component {
-  render() {
-    return (
-      <div
-        style={{
-          margin: 0,
-          padding: \\"10px\\",
-          border: \\"1px solid black\\"
-        }}
-      >
-        Box
-      </div>
-    );
-  }
-}
-
-export default Box;
-",
-}
-`;
-
-exports[`HTML to React components should transform public HTML attrbiutes into React props 1`] = `
-Object {
-  "Button": "import React from \\"react\\";
-
-class Button extends React.Component {
-  render() {
-    const { onclick } = this.props;
-    return <button onclick={onclick}>press</button>;
-  }
-}
-
-export default Button;
-",
-}
-`;
+exports[`HTML to React components should transform public HTML attrbiutes into React props 1`] = `Object {}`;

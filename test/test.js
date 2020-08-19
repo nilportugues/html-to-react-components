@@ -60,14 +60,11 @@ describe("HTML to React components", function() {
     ).toMatchSnapshot();
   });
 
-  it("should throw an error if there's data-component attribute without a value in HTML", function() {
-    expect(() => getComponentsLib(readFile("fail.html"))).toThrow();
-  });
 
   it("should transform inline CSS properly", function() {
     expect(
       getComponentsLib(
-        '<div data-component="Box" style="margin:0;padding:10px;border:1px solid black;">Box</div>'
+        '<div style="margin:0;padding:10px;border:1px solid black;">Box</div>'
       )
     ).toMatchSnapshot();
   });
@@ -75,7 +72,7 @@ describe("HTML to React components", function() {
   it("should transform public HTML attrbiutes into React props", function() {
     expect(
       getComponentsLib(
-        '<button data-component="Button" public:onclick="hello();">press</button>'
+        '<button public:onclick="hello();">press</button>'
       )
     ).toMatchSnapshot();
   });
